@@ -26,9 +26,9 @@ let playerHitByChat = false; // Nueva variable para rastrear si el jugador ha si
 let currentRetryLevel = 1; // Para guardar el nivel al que el botón de reintentar debe llevar
 
 let backgrounds = [
-    'img/bombonera_entrada.jpg',
-    'img/bombonera_interior.jpg',
-    'img/bombonera_palco.jpg'
+    'bombonera_entrada.jpg',
+    'bombonera_interior.jpg',
+    'bombonera_palco.jpg'
 ];
 
 // Imágenes con verificación de carga
@@ -54,8 +54,8 @@ function loadImage(img, src) {
 
 // Cargar todas las imágenes antes de iniciar el juego
 Promise.all([
-    loadImage(playerImg, 'img/hincha.png'),
-    loadImage(chatImg, 'img/whatsapp.png')
+    loadImage(playerImg, 'hincha.png'),
+    loadImage(chatImg, 'whatsapp.png')
 ]).then(() => {
     if (imagesLoaded === totalImages) {
         setupInitialState();
