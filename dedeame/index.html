@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dedeame: El juego del hincha</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="boca.jpg" />
+</head>
+<body>
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+    <div id="levelDisplay">Nivel: 1</div>
+    <div id="messageDisplay" class="message"></div>
+
+    <div id="gameControls">
+        <button id="startButton">EMPEZAR A JUGAR</button>
+        <button id="nextLevelButton" style="display: none;">Siguiente Nivel</button>
+    </div>
+
+    <audio id="backgroundMusic" src="audio/despuesdeti.mp3" loop></audio> 
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+
+
+body {
+    margin: 0;
+    overflow: hidden; /* Evita barras de desplazamiento */
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #003366; /* Color de fondo general */
+}
+
+#gameCanvas {
+    border: 5px solid #ffcc00; /* Borde amarillo de Boca */
+    background-size: cover; /* Asegura que la imagen de fondo cubra el canvas */
+    background-position: center;
+    image-rendering: pixelated; /* Para que las imágenes no se vean borrosas al escalar */
+    position: absolute; /* Permite posicionamiento más flexible */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra el canvas */
+    z-index: 1; /* Asegura que el canvas esté debajo de los controles si hay superposición */
+}
+
+#levelDisplay {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 24px;
+    z-index: 10; /* Asegura que esté encima del canvas */
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+#messageDisplay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px 40px;
+    font-size: 32px;
+    text-align: center;
+    border-radius: 10px;
+    z-index: 20; /* Asegura que esté encima de todo */
+    display: none; /* Oculto por defecto */
+}
+
+#gameControls {
+    position: absolute;
+    top: 65%; /* Ajusta esto si los botones se superponen con algo */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 15; /* Entre el canvas y los mensajes */
+    display: flex; /* Para que los botones se alineen si hubiera varios */
+    flex-direction: column; /* Apila los botones verticalmente */
+    gap: 15px; /* Espacio entre los botones */
+}
+
+/* Base style for all buttons within gameControls (or all buttons if not specific) */
+#gameControls button {
+    padding: 15px 30px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    background-color: #003366; /* Azul oscuro de Boca */
+    border: 3px solid #ffcc00; /* Borde amarillo */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    min-width: 250px; /* Asegura un ancho mínimo para los botones */
+    text-align: center;
+}
+
+#gameControls button:hover {
+    background-color: #004080; /* Azul un poco más claro al pasar el ratón */
+    transform: translateY(-2px); /* Pequeño efecto al pasar el ratón */
+}
+
+#gameControls button:active {
+    transform: translateY(0); /* Efecto de "presionado" */
+    background-color: #002244;
+}
+
+/* Styles for disabled buttons */
+#gameControls button:disabled {
+    opacity: 0.6; /* Hacemos que se vea un poco transparente */
+    cursor: not-allowed; /* Cambia el cursor para indicar que no es clickeable */
+    background-color: #003366; /* Mantiene el color base o puedes poner uno gris */
+    border-color: #cccccc; /* Cambia el color del borde */
+}
+
+/* CLASES CRUCIALES PARA LA VISIBILIDAD EN JS */
+.visible {
+    display: block !important;
+}
+
+.hidden {
+    display: none !important;
+}
